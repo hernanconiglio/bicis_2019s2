@@ -34,4 +34,10 @@ class Deposito {
 	method cantBicisSinAccesorios() { return
 		coleccionBicis.count( { b=>b.accesorios().isEmpty() } )
 	}
+	
+	method bicisCompanieras(bici) { return 
+	coleccionBicis.filter( { b=>b != bici and (b.largo() - bici.largo()).abs() <= 10 } )	
+	}
+	
+	
 }
