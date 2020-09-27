@@ -1,0 +1,40 @@
+import bicis.*
+import accesorios.*
+import depositos.*
+
+
+test "Test 1 de Deposito" {
+	//// DEFINICION DE LOS OBJETOS ////
+	//bici Nro 1
+	const farolito1 = new Farolito()
+	const bici1 = new Bici(rodado=28,largo=150,marca="Olmo")
+	bici1.agregarAccesorio(farolito1)
+	//bici Nro2
+	const farolito2 = new Farolito()
+	const canasto2 = new Canasto(volumen=8)
+	const morral2 = new Morral(largo=21,tieneOjoDeGato=true)
+	const bici2 = new Bici(rodado=26,largo=110,marca="Legnano")
+	bici2.agregarAccesorio(farolito2)
+	bici2.agregarAccesorio(canasto2)
+	bici2.agregarAccesorio(morral2)
+	//bici Nro3	
+	const morral3 = new Morral(largo=6,tieneOjoDeGato=false)
+	const bici3 = new Bici(rodado=20,largo=90,marca="Legnano")
+	bici3.agregarAccesorio(morral3)
+	//deposito1
+	const deposito1 = new Deposito()
+	deposito1.agregar(bici1)
+	deposito1.agregar(bici2)
+	deposito1.agregar(bici3)
+
+	//// DEFINICION DE LOS TESTEOS ////
+	assert.equals(#{bici1,bici2},deposito1.bicisRapidas())
+	assert.equals(#{"Olmo","Legnano"},deposito1.marcas())
+	assert.notThat(deposito1.esNocturno())	
+	assert.that(deposito1.hayBiciParaLlevarKg(10))
+	assert.notThat(deposito1.hayBiciParaLlevarKg(50))
+	
+	//// AHORA QUITO LA bici3 PARA QUE SEA DEPOSITO NOCTURNO ////
+	deposito1.quitar(bici3)
+	assert.that(deposito1.esNocturno())
+}
