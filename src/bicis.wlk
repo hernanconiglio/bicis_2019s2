@@ -4,7 +4,7 @@ class Bici {
 	const property rodado = 0
 	const property largo = 0
 	const property marca = "Cachito"
-	const accesorios = []
+	const property accesorios = []
 	
 	method agregarAccesorio(acc) { accesorios.add(acc) }
 	
