@@ -39,5 +39,4 @@ class Deposito {
 	coleccionBicis.filter( { b=>b != bici and (b.largo() - bici.largo()).abs() <= 10 } )	
 	}
 	
-	
 }

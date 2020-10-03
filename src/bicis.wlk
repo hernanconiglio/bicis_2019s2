@@ -7,6 +7,7 @@ class Bici {
 	const property accesorios = []
 	
 	method agregarAccesorio(acc) { accesorios.add(acc) }
+	method quitarAccesorio(acc) { accesorios.remove(acc) }
 	
 	method altura() { return self.rodado() * 2.5 + 15 }
 	

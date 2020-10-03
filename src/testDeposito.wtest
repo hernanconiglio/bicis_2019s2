@@ -37,4 +37,21 @@ test "Test 1 de Deposito" {
 	//// AHORA QUITO LA bici3 PARA QUE SEA DEPOSITO NOCTURNO ////
 	deposito1.quitar(bici3)
 	assert.that(deposito1.esNocturno())
+	
+	//// OTROS TESTEOS ////
+	assert.equals("Olmo",deposito1.marcaBiciMasRapida())
+	const bici4 = new Bici(rodado=28,largo=170,marca="Columbia")
+	const bici5 = new Bici(rodado=30,largo=200,marca="Bianchi")
+	const canasto4 = new Canasto(volumen=25)
+	const morral5 = new Morral(largo=24,tieneOjoDeGato=true)
+	bici4.agregarAccesorio(canasto4)
+	bici5.agregarAccesorio(morral5)	
+	deposito1.agregar(bici4)
+	deposito1.agregar(bici5)
+	assert.equals(8,deposito1.cargaTotalBicisLargas())
+	bici4.quitarAccesorio(canasto4)
+	assert.equals(1,deposito1.cantBicisSinAccesorios())
+	const bici6 = new Bici(rodado=27,largo=120,marca="Legnano")
+	deposito1.agregar(bici6)
+	assert.equals([bici6],deposito1.bicisCompanieras(bici2))
 }
