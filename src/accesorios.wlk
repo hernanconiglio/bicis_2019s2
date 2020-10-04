@@ -33,8 +33,10 @@ class Morral {
  * 
  * Incluir la respuesta en el archivo en el que se definen los accesorios. 
  * Pónganlo como se indica abajo así lo toma como comentario y no afecta al programa.
- 
+ *
+ *************************
  ******* RESPUESTA *******
+ *************************
  * Para agregar los nuevos accesorios hay que definir nuevas clases, por ejemplo:
  * class portaBotellitas
  * class canastoTrasero

@@ -39,4 +39,13 @@ class Deposito {
 	coleccionBicis.filter( { b=>b != bici and (b.largo() - bici.largo()).abs() <= 10 } )	
 	}
 	
+	// DESAFIO Hay Compañeras
+	method hayCompanieras() { return
+		coleccionBicis.any( { b=>self.bicisCompanieras(b) != [] } ) 
+	}
+	
+	method parejasDeCompanieras() { return
+		coleccionBicis.filter( { b=>self.bicisCompanieras(b) != [] } ) 
+	}
+	
 }

@@ -3,7 +3,7 @@ import accesorios.*
 import depositos.*
 
 
-test "Test 1 de Deposito" {
+test "Test de Deposito" {
 	//// DEFINICION DE LOS OBJETOS ////
 	//bici Nro 1
 	const farolito1 = new Farolito()
@@ -54,4 +54,8 @@ test "Test 1 de Deposito" {
 	const bici6 = new Bici(rodado=27,largo=120,marca="Legnano")
 	deposito1.agregar(bici6)
 	assert.equals([bici6],deposito1.bicisCompanieras(bici2))
+	
+	//// TEST DESAFIOS ////
+	assert.that(deposito1.hayCompanieras())
+	assert.equals([bici2,bici6],deposito1.parejasDeCompanieras())
 }
